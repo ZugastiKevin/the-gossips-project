@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <br>
+      <h3><%= @gossip.title %></h3>
+      <p><%= @gossip.content %></p>
+      <p><a href="<%= user_path(@gossip.user_id) %>" ><%= User.find(@gossip.user_id).first_name %> <%= User.find(@gossip.user_id).last_name %></a></p>
+      <div class="card my-1">
+        <div class="card-body">
+          <p class="font-weight-bold">Commentaires</p>
+          <%= form_with(model: [@gossip, @gossip.comments.build]) do |f| %>
+            <div class="form-group">
+              <%= f.label 'Nouveau commentaire' %>
+              <%= f.text_area :body, class: 'form-control' %>
+            </div>
+            <%= f.submit 'Poster', class: 'btn btn-dark' %>
+          <% end %>
+        </div>
+      </div>
+      <%= render @gossip.comments %>
+    </div>
+  </div>
+</div>

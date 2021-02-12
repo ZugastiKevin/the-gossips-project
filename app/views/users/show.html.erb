@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="container mt-5 d-flex justify-content-center">
+      <div class="card p-3">
+          <div class="d-flex align-items-center">
+              <div class="image"> <img src="https://pbs.twimg.com/media/CrhZjtVWIAAQL5h?format=png&name=large" class="rounded" width="155"> </div>
+              <div class="ml-3 w-100">
+                  <h4 class="mb-0 mt-0"><%= @user.first_name %> <%= @user.last_name %></h4> <!-- <span>Ville: <a href="<= city_path(@user.city.id) %>"><#%= @user.city.city_name %></a></span> -->
+                  <span> Age: <%= @user.age %></span> <br> <span>Email: <%= @user.email %></span> <br> <span>Description: <br> <%= @user.description %></span>
+                  <div class="p-2 mt-2 bg-primary d-flex justify-content-around rounded text-white stats">
+                      <div class="d-flex flex-column"> <span class="articles">Gossip</span> <span class="number1"><%= @user.gossips.count %></span> </div>
+                      <div class="d-flex flex-column"> <span class="followers">Likes</span> <span class="number2">0</span> </div>
+                  </div>
+                  <div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-primary w-100">Message</button> <button class="btn btn-sm btn-primary w-100 ml-2">👍</button> </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

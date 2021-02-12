@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <br>
+      <h1> Création de ton compte</h1>
+
+      <%= form_for @user do |f| %>
+        <div class="form-group">
+          <label>Prénom</label>
+          <%= f.text_field :first_name %>
+        </div>
+        <div class="form-group">
+          <label>Nom</label>
+          <%= f.text_field :last_name %>
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <%= f.text_field :age %>
+        </div>
+        <div class="form-group">
+          <label>Une description de ta personne</label>
+          <%= f.text_area :description, class: 'form-control' %>
+        </div>
+      <!--
+        <div class="form-group">
+          <label>Ville</label>
+          <#%= f.text_field :city_name, class: 'form-control' %>
+        </div>
+      -->
+        <div class="form-group">
+          <label>Email</label>
+          <%= f.text_field :email %>
+        </div>
+        <div class="form-group">
+          <label>Mot de passe</label>
+          <%= f.text_field :password %>
+        </div>
+        <div class="form-group">
+          <label>Confirmation du mot de passe</label>
+          <%= f.text_field :password_confirmation %>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-secondary">Créer ton compte</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

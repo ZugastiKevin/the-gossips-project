@@ -1,0 +1,18 @@
+<br>
+<h1>Page de <%= @cities.city_name %></h1>
+<hr>
+<h2>Liste des potins de cette ville</h2>
+
+<p>
+<% arr = [] %>
+<% arr = User.all.find_by(city_id: @cities.id).gossips %>
+<% arr.each do |goss| %>
+  <ul class="list-group">
+    <li class="list-group-item">
+    <%=  goss.title %>
+    <%=  goss.content %>
+    <br>
+    </p>
+    </li>
+  </ul>
+<% end %>

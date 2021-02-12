@@ -1,0 +1,10 @@
+<% unless comment.parent_id || !comment.persisted? %>
+  <div class="card">
+    <div class="card">
+      <div class="card-body">
+        <%= comment.body %> 
+        <a href="<%= gossip_comment_path(@gossip, comment.id) %>" class="btn btn-dark"> Editer </a>
+      </div>
+    </div>
+  </div>
+<% end %>

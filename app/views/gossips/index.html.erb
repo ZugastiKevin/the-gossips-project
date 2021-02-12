@@ -1,0 +1,30 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">𝕋𝕙𝕖 𝔾𝕠𝕤𝕤𝕚𝕡 ℙ𝕣𝕠𝕛𝕖𝕔𝕥</h1>
+    <p class="lead">Colporter sur le dos des gens, n'aurait jamais été aussi facile !</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <div class="form-group">
+        <a href="<%= new_gossip_path %>" class="btn btn-dark"> Créer un potin </a>
+      </div>
+      <h1>Liste des potins existants</h1>
+      <ul class="list-group">
+        <% @gossips.each do |gossip|  %>
+        <li class="list-group-item">
+          <h2> <%= gossip.title %> </h2>
+          <p> <%= gossip.content %> </p>
+          <p>
+            <a href="<%= gossip_path(gossip.id) %>" class="btn btn-secondary"> Détails </a>
+            <a href="<%= edit_gossip_path(gossip.id) %>" class="btn btn-secondary"> Editer </a>
+            <a href="<%= gossip_path(gossip.id) %>" class="btn btn-danger" data-confirm="Confirmer la suppression du potin ?" data-method="DELETE"> 🗑️ </a>
+          </p>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
